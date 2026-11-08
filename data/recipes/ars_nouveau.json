@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "output_mod": "ars_nouveau",
+  "recipes": [
+    {
+      "recipe_id": "gregification:novice_spell_book",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "ars_nouveau:novice_spell_book",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:blueprint_blank"
+          },
+          "count": 6
+        },
+        {
+          "choice": {
+            "item": "ars_nouveau:source_gem"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "tag": "forge:books"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "botania:rune_mana"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3×3)",
+      "crafting_pattern": [
+        "PSP",
+        "PBP",
+        "PMP"
+      ],
+      "pattern_key": {
+        "P": {
+          "item": "gtceu:blueprint_blank"
+        },
+        "S": {
+          "item": "ars_nouveau:source_gem"
+        },
+        "B": {
+          "tag": "forge:books"
+        },
+        "M": {
+          "item": "botania:rune_mana"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/server_scripts/Gregification/Mods/ars.js",
+        "line_start": 323,
+        "line_end": 332,
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/Gregification/Mods/ars.js#L323-L332"
+      }
+    },
+    {
+      "recipe_id": "gregification:apprentice_spell_book",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "ars_nouveau:apprentice_spell_book",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "tag": "forge:plates/manasteel"
+          },
+          "count": 6
+        },
+        {
+          "choice": {
+            "item": "minecraft:ender_eye"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "ars_nouveau:novice_spell_book"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "bloodmagic:demonslate"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3×3)",
+      "crafting_pattern": [
+        "PSP",
+        "PBP",
+        "PMP"
+      ],
+      "pattern_key": {
+        "P": {
+          "tag": "forge:plates/manasteel"
+        },
+        "S": {
+          "item": "minecraft:ender_eye"
+        },
+        "B": {
+          "item": "ars_nouveau:novice_spell_book"
+        },
+        "M": {
+          "item": "bloodmagic:demonslate"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/server_scripts/Gregification/Mods/ars.js",
+        "line_start": 334,
+        "line_end": 343,
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/Gregification/Mods/ars.js#L334-L343"
+      }
+    },
+    {
+      "recipe_id": "gregification:archmage_spell_book",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "ars_nouveau:archmage_spell_book",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "tag": "forge:plates/terrasteel"
+          },
+          "count": 6
+        },
+        {
+          "choice": {
+            "item": "minecraft:totem_of_undying"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "ars_nouveau:apprentice_spell_book"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "ars_nouveau:wilden_tribute"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3×3)",
+      "crafting_pattern": [
+        "PSP",
+        "PBP",
+        "PMP"
+      ],
+      "pattern_key": {
+        "P": {
+          "tag": "forge:plates/terrasteel"
+        },
+        "S": {
+          "item": "minecraft:totem_of_undying"
+        },
+        "B": {
+          "item": "ars_nouveau:apprentice_spell_book"
+        },
+        "M": {
+          "item": "ars_nouveau:wilden_tribute"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/server_scripts/Gregification/Mods/ars.js",
+        "line_start": 345,
+        "line_end": 354,
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/Gregification/Mods/ars.js#L345-L354"
+      }
+    }
+  ]
+}

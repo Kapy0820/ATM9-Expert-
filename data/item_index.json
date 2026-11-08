@@ -84,6 +84,34 @@
         "status": "source_parsed"
       }
     ],
+    "ars_nouveau:apprentice_spell_book": [
+      {
+        "recipe_id": "gregification:apprentice_spell_book",
+        "file": "data/recipes/ars_nouveau.json",
+        "status": "source_parsed"
+      }
+    ],
+    "ars_nouveau:archmage_spell_book": [
+      {
+        "recipe_id": "gregification:archmage_spell_book",
+        "file": "data/recipes/ars_nouveau.json",
+        "status": "source_parsed"
+      }
+    ],
+    "ars_nouveau:novice_spell_book": [
+      {
+        "recipe_id": "gregification:novice_spell_book",
+        "file": "data/recipes/ars_nouveau.json",
+        "status": "source_parsed"
+      }
+    ],
+    "gtceu:blueprint_blank": [
+      {
+        "recipe_id": "gregification:greg_blueprint",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
     "minecraft:dirt": [
       {
         "recipe_id": "botania:mana_infusion/dirt/dirt_dupe",

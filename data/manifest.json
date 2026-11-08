@@ -4,11 +4,11 @@
   "upstream_repository": "AllTheMods/atm9-expert",
   "upstream_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
   "pack_version": "未検証（配布版との同一性不明）",
-  "recipe_count": 24,
-  "unique_output_items": 15,
-  "source_scope": "official KubeJS JSON definitions, source_parsed only",
+  "recipe_count": 28,
+  "unique_output_items": 19,
+  "source_scope": "Official pinned KubeJS JSON definitions and manually parsed KubeJS JavaScript recipes (source_parsed only)",
   "effective_game_recipes_verified": false,
-  "coverage": "PARTIAL: 12 Botania mana_infusion + 12 Powah energizing recipe definitions; NOT all ATM9 Expert items",
+  "coverage": "PARTIAL: 24 existing JSON definitions + 3 Ars Nouveau spellbooks + 1 GTCEu blueprint; NOT a complete pack recipe collection",
   "updated": "2026-11-08",
   "caution": "ゲーム起動時のレシピ削除・置換、Mod標準レシピ、GregTech動的生成レシピは未反映。"
 }

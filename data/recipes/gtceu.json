@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "output_mod": "gtceu",
+  "recipes": [
+    {
+      "recipe_id": "gregification:greg_blueprint",
+      "recipe_type": "gtceu:assembler",
+      "output": {
+        "item": "gtceu:blueprint_blank",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "tag": "forge:paper"
+          },
+          "count": 4
+        },
+        {
+          "choice": {
+            "tag": "forge:small_dusts/lapis"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "fluid_inputs": [
+          {
+            "tag": "forge:ink",
+            "amount_mb": 144
+          }
+        ],
+        "duration_ticks": 600,
+        "eut_tier": "LV",
+        "eut_numeric": null
+      },
+      "station": "GTCEu Assembler",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/server_scripts/Gregification/miscItems.js",
+        "line_start": 378,
+        "line_end": 387,
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/Gregification/miscItems.js#L378-L387"
+      }
+    }
+  ]
+}
