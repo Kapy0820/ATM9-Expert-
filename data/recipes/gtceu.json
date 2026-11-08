@@ -178,6 +178,222 @@
       "alternative_variants": "Silicone Rubber and Styrene Butadiene Rubber also exist in source but are not yet indexed"
     },
     {
+      "recipe_id": "gtceu:electric_motor_lv_iron",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_electric_motor",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:tin_single_cable"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:copper_single_wire"
+          },
+          "count": 4
+        },
+        {
+          "choice": {
+            "item": "gtceu:iron_rod"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:magnetic_iron_rod"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3x3)",
+      "crafting_pattern": [
+        "CWR",
+        "WMW",
+        "RWC"
+      ],
+      "pattern_key": {
+        "C": {
+          "item": "gtceu:tin_single_cable"
+        },
+        "W": {
+          "item": "gtceu:copper_single_wire"
+        },
+        "R": {
+          "item": "gtceu:iron_rod"
+        },
+        "M": {
+          "item": "gtceu:magnetic_iron_rod"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java",
+        "line_start": 33,
+        "line_end": 36,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L33-L36"
+      }
+    },
+    {
+      "recipe_id": "gtceu:electric_motor_lv_steel",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_electric_motor",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:tin_single_cable"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:copper_single_wire"
+          },
+          "count": 4
+        },
+        {
+          "choice": {
+            "item": "gtceu:steel_rod"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:magnetic_steel_rod"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3x3)",
+      "crafting_pattern": [
+        "CWR",
+        "WMW",
+        "RWC"
+      ],
+      "pattern_key": {
+        "C": {
+          "item": "gtceu:tin_single_cable"
+        },
+        "W": {
+          "item": "gtceu:copper_single_wire"
+        },
+        "R": {
+          "item": "gtceu:steel_rod"
+        },
+        "M": {
+          "item": "gtceu:magnetic_steel_rod"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java",
+        "line_start": 29,
+        "line_end": 32,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L29-L32"
+      }
+    },
+    {
+      "recipe_id": "gtceu:electric_piston_lv",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_electric_piston",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:steel_plate"
+          },
+          "count": 3
+        },
+        {
+          "choice": {
+            "item": "gtceu:tin_single_cable"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:steel_rod"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:small_steel_gear"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "gtceu:lv_electric_motor"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3x3)",
+      "crafting_pattern": [
+        "PPP",
+        "CRR",
+        "CMG"
+      ],
+      "pattern_key": {
+        "P": {
+          "item": "gtceu:steel_plate"
+        },
+        "C": {
+          "item": "gtceu:tin_single_cable"
+        },
+        "R": {
+          "item": "gtceu:steel_rod"
+        },
+        "G": {
+          "item": "gtceu:small_steel_gear"
+        },
+        "M": {
+          "item": "gtceu:lv_electric_motor"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java",
+        "line_start": 542,
+        "line_end": 545,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L542-L545"
+      }
+    },
+    {
       "recipe_id": "gtceu:lv_assembler",
       "recipe_type": "minecraft:crafting_shaped",
       "output": {

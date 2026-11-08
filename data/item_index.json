@@ -126,6 +126,25 @@
         "status": "source_parsed"
       }
     ],
+    "gtceu:lv_electric_motor": [
+      {
+        "recipe_id": "gtceu:electric_motor_lv_iron",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "gtceu:electric_motor_lv_steel",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
+    "gtceu:lv_electric_piston": [
+      {
+        "recipe_id": "gtceu:electric_piston_lv",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
     "gtceu:lv_machine_casing": [
       {
         "recipe_id": "gtceu:casing_lv",

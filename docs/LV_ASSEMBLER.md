@@ -30,7 +30,10 @@ W C W
 4. **LV Conveyor Module ×2**：ゴム板を使う場合、1個につきRubber Plate ×6、LV Electric Motor ×2、Tin Single Cable ×1。配置 `RRR / MCM / RRR`。原典には別のゴム素材による派生レシピもある。[原典](https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L156-L170)
 5. **LV Assembler ×1**：冒頭の3×3に必要部品を配置。
 
-**注意点**：AssemblerでMachine Hullを作る別レシピもあるが、**初号機を作る場合は作業台製のHullを使う**。Robot Arm等の下位素材（Electric Motor / Piston / 素材板、回路、工具、ケーブルの製造）までは全件未収録。この文書は完全な素材入手経路を保証しない。
+6. **LV Electric Motor**：作業台でTin Single Cable ×2、Copper Single Wire ×4、Iron Rod ×2 + Magnetic Iron Rod ×1、またはSteel Rod ×2 + Magnetic Steel Rod ×1。配置 `CWR / WMW / RWC`。原典：[モーターの2製法](https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L29-L36)。
+7. **LV Electric Piston**：Steel Plate ×3、Tin Single Cable ×2、Steel Rod ×2、Small Steel Gear ×1、LV Electric Motor ×1。配置 `PPP / CRR / CMG`。原典：[ピストン](https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L542-L545)。
+
+**注意点**：AssemblerでMachine Hullを作る別レシピもあるが、**初号機を作る場合は作業台製のHullを使う**。Robot Arm等の下位素材（素材板、回路、工具、ケーブルの製造）までは全件未収録。この文書は完全な素材入手経路を保証しない。
 
 ### ATM9 Expert側の改変チェック
 
