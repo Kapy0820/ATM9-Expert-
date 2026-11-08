@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "output_mod": "powah",
+  "recipes": [
+    {
+      "recipe_id": "powah:energizing/dry_ice/2x_dry_ice",
+      "recipe_type": "powah:energizing",
+      "output": {
+        "item": "powah:dry_ice",
+        "count": 2
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "minecraft:blue_ice"
+          },
+          "count": 4
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "energy": 20000
+      },
+      "station": "Powah: Energizing",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/powah/recipes/energizing/dry_ice/2x_dry_ice.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/dry_ice/2x_dry_ice.json"
+      }
+    },
+    {
+      "recipe_id": "powah:energizing/dry_ice/3x_dry_ice",
+      "recipe_type": "powah:energizing",
+      "output": {
+        "item": "powah:dry_ice",
+        "count": 3
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "minecraft:blue_ice"
+          },
+          "count": 6
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "energy": 30000
+      },
+      "station": "Powah: Energizing",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/powah/recipes/energizing/dry_ice/3x_dry_ice.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/dry_ice/3x_dry_ice.json"
+      }
+    },
+    {
+      "recipe_id": "powah:energizing/uraninite/2x_uraninite_from_raw",
+      "recipe_type": "powah:energizing",
+      "output": {
+        "item": "powah:uraninite",
+        "count": 2
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "powah:uraninite_raw"
+          },
+          "count": 2
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "energy": 40000
+      },
+      "station": "Powah: Energizing",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/powah/recipes/energizing/uraninite/2x_uraninite_from_raw.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/uraninite/2x_uraninite_from_raw.json"
+      }
+    },
+    {
+      "recipe_id": "powah:energizing/uraninite/3x_uraninite_from_raw",
+      "recipe_type": "powah:energizing",
+      "output": {
+        "item": "powah:uraninite",
+        "count": 3
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "powah:uraninite_raw"
+          },
+          "count": 3
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "energy": 60000
+      },
+      "station": "Powah: Energizing",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/powah/recipes/energizing/uraninite/3x_uraninite_from_raw.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/uraninite/3x_uraninite_from_raw.json"
+      }
+    },
+    {
+      "recipe_id": "powah:energizing/uraninite/4x_uraninite_from_raw",
+      "recipe_type": "powah:energizing",
+      "output": {
+        "item": "powah:uraninite",
+        "count": 4
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "powah:uraninite_raw"
+          },
+          "count": 4
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "energy": 80000
+      },
+      "station": "Powah: Energizing",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/powah/recipes/energizing/uraninite/4x_uraninite_from_raw.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/uraninite/4x_uraninite_from_raw.json"
+      }
+    },
+    {
+      "recipe_id": "powah:energizing/uraninite/5x_uraninite_from_raw",
+      "recipe_type": "powah:energizing",
+      "output": {
+        "item": "powah:uraninite",
+        "count": 5
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "powah:uraninite_raw"
+          },
+          "count": 5
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "energy": 100000
+      },
+      "station": "Powah: Energizing",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/powah/recipes/energizing/uraninite/5x_uraninite_from_raw.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/uraninite/5x_uraninite_from_raw.json"
+      }
+    },
+    {
+      "recipe_id": "powah:energizing/uraninite/6x_uraninite_from_raw",
+      "recipe_type": "powah:energizing",
+      "output": {
+        "item": "powah:uraninite",
+        "count": 6
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "powah:uraninite_raw"
+          },
+          "count": 6
+        }
+      ],
+      "catalysts": [],
+      "costs": {
+        "energy": 120000
+      },
+      "station": "Powah: Energizing",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/powah/recipes/energizing/uraninite/6x_uraninite_from_raw.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/uraninite/6x_uraninite_from_raw.json"
+      }
+    }
+  ]
+}
