@@ -1,22 +1,39 @@
-# ATM9 Expert コミュニティ攻略Wiki
+# ATM9 Expert 攻略ナレッジベース（AIエージェント対応）
 
-ATM9 Expert の攻略・レシピ・進行情報を日本語で共有するためのリポジトリです。
+このリポジトリは、コミュニティのプレイヤーやAIエージェントが、**特定アイテムの製作レシピとその出典**を安全に調べるための資料です。
 
-## レシピ資料
+## AIエージェントの調べ方
 
-- [Mod別レシピ定義索引](RECIPE_INDEX.md) — 公式パックのKubeJSソースをMod別に分類した一次資料へのリンク集（**全レシピの完成表ではありません**）。
-- [調査方法と限界](RECIPE_METHOD.md) — 最終的なレシピ一覧を作るための検証方法。
+1. **[AGENTS.md](AGENTS.md)を必ず読む。** 推測で手順を補完しない。
+2. [data/manifest.json](data/manifest.json) で収録範囲・固定コミット・実機検証状態を確認。
+3. [data/item_index.json](data/item_index.json) で `modid:item_name` を検索。
+4. 該当する [data/recipes](data/recipes) のJSONから、完成品の数量・入力・触媒・必要エネルギー・原典URLを読む。
+5. 必要な前提素材を `tools/recipe_query.py` でたどる。未収録の素材やループがあれば**部分手順**として報告する。
 
-## 運用ルール
+## 収録状況
 
-- 対象のATM9 Expertバージョンを必ず明記する。
-- アイテムID、完成個数、素材と個数、加工設備、電圧・時間・流体、レシピの出典を記録する。
-- 不明な条件は推測で埋めず「未検証」と記す。
-- 公式Modpackの設定・スクリプトを丸ごと転載せず、必要な事実を独自に整理して出典へリンクする。
+現在は公式KubeJS JSONから直接転記した **24レシピ定義**を機械可読で収録しています。対象はBotaniaのMana Infusion（12件）とPowahのEnergizing（12件）です。分類は**完成品のMod ID**基準なので、例えばPowahで作るAE2アイテムは `data/recipes/ae2.json` に入ります。
 
-**現状:** 第1段階のソース索引を公開。全アイテムの完成レシピの収集・検証は未完了です。
+**これはATM9 Expert全アイテムの製作レシピ集ではありません。** 元データは公式GitHubの固定コミット `309d0fa357b00d855f3a50739ae64737f7537936`であり、配布版との完全一致やJEI上の有効性は未確認（`source_parsed`）です。レシピが見つからなくても「作れない」という意味ではありません。
 
-## レシピ詳細の掲載と自動生成
+## ローカルでの検索（Python 3、外部ライブラリ不要）
 
-- [Botania レシピの具体例](catalog/botania-starter.md)
-- [Mod別JSONレシピ表の作成手順](CATALOG_GUIDE.md)
+```sh
+python tools/recipe_query.py lookup powah:dry_ice
+python tools/recipe_query.py plan powah:dry_ice --count 4
+python tools/recipe_query.py lookup minecraft:dirt
+python tools/recipe_query.py plan minecraft:dirt --count 16
+python tools/recipe_query.py validate
+```
+
+複数の作り方がある場合、勝手に一つを選びません。例：
+
+```sh
+python tools/recipe_query.py plan powah:dry_ice --count 4 --choose powah:dry_ice=powah:energizing/dry_ice/2x_dry_ice
+```
+
+## コミュニティでのデータ拡張
+
+[docs/IMPORT.md](docs/IMPORT.md) の仕様に従って`data/recipes/<出力Mod>.json`へ追加した後、`python tools/recipe_query.py rebuild-index`で索引を更新してください。変更のたびに`validate`で整合性を確認します。
+
+旧`catalog/`や`recipes/`のソースリンク集・Markdown生成物は、AIが未検証の情報を完成レシピと誤認しないよう整理しました。公式の一次資料は各レシピの `source.url` から参照できます。

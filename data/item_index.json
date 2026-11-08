@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "items": {
+    "ae2:charged_certus_quartz_crystal": [
+      {
+        "recipe_id": "powah:energizing/certus/2x_certus_quartz_to_charged_certus_quartz",
+        "file": "data/recipes/ae2.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/certus/3x_certus_quartz_to_charged_certus_quartz",
+        "file": "data/recipes/ae2.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/certus/4x_certus_quartz_to_charged_certus_quartz",
+        "file": "data/recipes/ae2.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/certus/5x_certus_quartz_to_charged_certus_quartz",
+        "file": "data/recipes/ae2.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/certus/6x_certus_quartz_to_charged_certus_quartz",
+        "file": "data/recipes/ae2.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:dirt_1x": [
+      {
+        "recipe_id": "botania:mana_infusion/dirt/1x_dirt_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:dirt_2x": [
+      {
+        "recipe_id": "botania:mana_infusion/dirt/2x_dirt_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:end_stone_1x": [
+      {
+        "recipe_id": "botania:mana_infusion/end_stone/1x_end_stone_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:end_stone_2x": [
+      {
+        "recipe_id": "botania:mana_infusion/end_stone/2x_end_stone_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:netherrack_1x": [
+      {
+        "recipe_id": "botania:mana_infusion/netherrack/1x_netherrack_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:netherrack_2x": [
+      {
+        "recipe_id": "botania:mana_infusion/netherrack/2x_netherrack_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:obsidian_1x": [
+      {
+        "recipe_id": "botania:mana_infusion/obsidian/1x_dirt_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "allthecompressed:obsidian_2x": [
+      {
+        "recipe_id": "botania:mana_infusion/obsidian/2x_dirt_dupe",
+        "file": "data/recipes/allthecompressed.json",
+        "status": "source_parsed"
+      }
+    ],
+    "minecraft:dirt": [
+      {
+        "recipe_id": "botania:mana_infusion/dirt/dirt_dupe",
+        "file": "data/recipes/minecraft.json",
+        "status": "source_parsed"
+      }
+    ],
+    "minecraft:end_stone": [
+      {
+        "recipe_id": "botania:mana_infusion/end_stone/end_stone_dupe",
+        "file": "data/recipes/minecraft.json",
+        "status": "source_parsed"
+      }
+    ],
+    "minecraft:netherrack": [
+      {
+        "recipe_id": "botania:mana_infusion/netherrack/netherrack_dupe",
+        "file": "data/recipes/minecraft.json",
+        "status": "source_parsed"
+      }
+    ],
+    "minecraft:obsidian": [
+      {
+        "recipe_id": "botania:mana_infusion/obsidian/dirt_dupe",
+        "file": "data/recipes/minecraft.json",
+        "status": "source_parsed"
+      }
+    ],
+    "powah:dry_ice": [
+      {
+        "recipe_id": "powah:energizing/dry_ice/2x_dry_ice",
+        "file": "data/recipes/powah.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/dry_ice/3x_dry_ice",
+        "file": "data/recipes/powah.json",
+        "status": "source_parsed"
+      }
+    ],
+    "powah:uraninite": [
+      {
+        "recipe_id": "powah:energizing/uraninite/2x_uraninite_from_raw",
+        "file": "data/recipes/powah.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/uraninite/3x_uraninite_from_raw",
+        "file": "data/recipes/powah.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/uraninite/4x_uraninite_from_raw",
+        "file": "data/recipes/powah.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/uraninite/5x_uraninite_from_raw",
+        "file": "data/recipes/powah.json",
+        "status": "source_parsed"
+      },
+      {
+        "recipe_id": "powah:energizing/uraninite/6x_uraninite_from_raw",
+        "file": "data/recipes/powah.json",
+        "status": "source_parsed"
+      }
+    ]
+  }
+}
