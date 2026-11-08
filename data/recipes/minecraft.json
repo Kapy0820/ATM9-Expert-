@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "output_mod": "minecraft",
+  "recipes": [
+    {
+      "recipe_id": "botania:mana_infusion/dirt/dirt_dupe",
+      "recipe_type": "botania:mana_infusion",
+      "output": {
+        "item": "minecraft:dirt",
+        "count": 2
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "minecraft:dirt"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [
+        {
+          "block": "botania:conjuration_catalyst",
+          "consumed": false,
+          "description": "マナ注入の触媒（非消費）"
+        }
+      ],
+      "costs": {
+        "mana": 2000
+      },
+      "station": "Botania: mana_infusion (設備の詳細はJEIで要確認)",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/botania/recipes/mana_infusion/dirt/dirt_dupe.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/botania/recipes/mana_infusion/dirt/dirt_dupe.json"
+      }
+    },
+    {
+      "recipe_id": "botania:mana_infusion/end_stone/end_stone_dupe",
+      "recipe_type": "botania:mana_infusion",
+      "output": {
+        "item": "minecraft:end_stone",
+        "count": 2
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "minecraft:end_stone"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [
+        {
+          "block": "botania:conjuration_catalyst",
+          "consumed": false,
+          "description": "マナ注入の触媒（非消費）"
+        }
+      ],
+      "costs": {
+        "mana": 2000
+      },
+      "station": "Botania: mana_infusion (設備の詳細はJEIで要確認)",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/botania/recipes/mana_infusion/end_stone/end_stone_dupe.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/botania/recipes/mana_infusion/end_stone/end_stone_dupe.json"
+      }
+    },
+    {
+      "recipe_id": "botania:mana_infusion/netherrack/netherrack_dupe",
+      "recipe_type": "botania:mana_infusion",
+      "output": {
+        "item": "minecraft:netherrack",
+        "count": 2
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "minecraft:netherrack"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [
+        {
+          "block": "botania:conjuration_catalyst",
+          "consumed": false,
+          "description": "マナ注入の触媒（非消費）"
+        }
+      ],
+      "costs": {
+        "mana": 2000
+      },
+      "station": "Botania: mana_infusion (設備の詳細はJEIで要確認)",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/botania/recipes/mana_infusion/netherrack/netherrack_dupe.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/botania/recipes/mana_infusion/netherrack/netherrack_dupe.json"
+      }
+    },
+    {
+      "recipe_id": "botania:mana_infusion/obsidian/dirt_dupe",
+      "recipe_type": "botania:mana_infusion",
+      "output": {
+        "item": "minecraft:obsidian",
+        "count": 2
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "minecraft:obsidian"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [
+        {
+          "block": "botania:conjuration_catalyst",
+          "consumed": false,
+          "description": "マナ注入の触媒（非消費）"
+        }
+      ],
+      "costs": {
+        "mana": 2000
+      },
+      "station": "Botania: mana_infusion (設備の詳細はJEIで要確認)",
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "AllTheMods/atm9-expert",
+        "commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "path": "kubejs/data/botania/recipes/mana_infusion/obsidian/dirt_dupe.json",
+        "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/botania/recipes/mana_infusion/obsidian/dirt_dupe.json"
+      }
+    }
+  ]
+}
