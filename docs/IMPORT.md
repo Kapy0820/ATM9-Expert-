@@ -46,3 +46,7 @@ python tools/recipe_query.py --data import-preview lookup powah:dry_ice
 ```
 
 `import-preview/skipped.json`に**未対応・条件未解決のJSON**が理由付きで残ります。これらを手順の根拠にしてはいけません。プレビューをそのまま既存の`data/recipes`に上書きせず、重複・変更・実ゲームでの有効性を確認してマージしてください。`import-preview/`は`.gitignore`対象です。
+
+## 未収録レシピをその場で提出する
+
+[RECOVERY.md](RECOVERY.md) に、取得元の固定GitHubリンクを使う回収・検証・PR提出手順をまとめています。単純なJSONとKubeJS shapedレシピは `tools/recover_recipe.py` で読み取れます。**対応外の動的JSを無理に取り込まない**でください。

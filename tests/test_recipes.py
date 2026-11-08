@@ -14,8 +14,9 @@ class RecipeDatabaseTests(unittest.TestCase):
         cls.db = recipe_query.read_db(ROOT / "data")
 
     def test_fixed_source_records(self):
-        self.assertEqual(sum(map(len, self.db.values())), 24)
-        self.assertEqual(len(self.db), 15)
+        manifest = __import__('json').loads((ROOT / 'data' / 'manifest.json').read_text(encoding='utf-8'))
+        self.assertEqual(sum(map(len, self.db.values())), manifest['recipe_count'])
+        self.assertEqual(len(self.db), manifest['unique_output_items'])
 
     def test_index_matches_records(self):
         self.assertEqual(recipe_query.checks(self.db, ROOT / "data"), [])
@@ -54,6 +55,18 @@ class RecipeDatabaseTests(unittest.TestCase):
         result = recipe_query.plan(self.db, "missing:item", 1, {}, set())
         self.assertEqual(result["status"], "partial")
         self.assertEqual(result["unresolved"][0]["reason"], "recipe_not_in_database_not_proof_of_unobtainability")
+
+
+    def test_ars_spellbook_source_and_layout(self):
+        recipes = self.db["ars_nouveau:novice_spell_book"]
+        self.assertEqual(len(recipes), 1)
+        recipe = recipes[0]
+        self.assertEqual(recipe["crafting_pattern"], ["PSP", "PBP", "PMP"])
+        self.assertIn("ars.js", recipe["source"]["url"])
+        self.assertIn({"choice": {"item": "gtceu:blueprint_blank"}, "count": 6}, recipe["inputs"])
+        result = recipe_query.plan(self.db, "ars_nouveau:novice_spell_book", 1, {}, set())
+        self.assertEqual(result["steps"][-1]["crafting_pattern"], ["PSP", "PBP", "PMP"])
+        self.assertTrue(any(x.get("reason") == "tag_requires_concrete_item_resolution" for x in result["unresolved"]))
 
 if __name__ == "__main__":
     unittest.main()

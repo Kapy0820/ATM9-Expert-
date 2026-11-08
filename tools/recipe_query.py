@@ -141,6 +141,7 @@ def plan(db, item, requested, choices, inventory):
             "recipe_id": chosen["recipe_id"], "crafts": runs, "station": chosen.get("station"),
             "consumed_inputs": chosen["inputs"], "reusable_catalysts": chosen.get("catalysts", []),
             "costs_per_craft": chosen.get("costs", {}), "source": chosen["source"],
+            "crafting_pattern": chosen.get("crafting_pattern"), "pattern_key": chosen.get("pattern_key"),
             "verification": chosen["verification"],
         })
     descend(item, requested, [])
