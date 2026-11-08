@@ -15,3 +15,13 @@ jobs:
         run: python tools/recipe_query.py validate
       - name: Run offline recipe tests
         run: python -m unittest discover -s tests -v
+      - name: Verify real recipe walkthrough output
+        run: |
+          python tools/explain_recipe.py ars_nouveau:apprentice_spell_book --count 1 > recipe-example.md
+          cat recipe-example.md
+          grep -Fq 'ars_nouveau:apprentice_spell_book' recipe-example.md
+          grep -Fq 'gtceu:blueprint_blank' recipe-example.md
+          grep -Fq 'PBP' recipe-example.md
+          grep -Fq 'Gregification/Mods/ars.js' recipe-example.md
+          grep -Fq '実ゲーム未検証' recipe-example.md
+          grep -Fq '未解決' recipe-example.md
