@@ -49,6 +49,389 @@
         "line_end": 387,
         "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/Gregification/miscItems.js#L378-L387"
       }
+    },
+    {
+      "recipe_id": "gtceu:casing_lv",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_machine_casing",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:steel_plate"
+          },
+          "count": 8
+        }
+      ],
+      "catalysts": [
+        {
+          "tool": "craftingToolWrench",
+          "consumed": false,
+          "description": "w in center slot: a GregTech crafting wrench; tool durability behavior and exact accepted wrench require JEI confirmation"
+        }
+      ],
+      "costs": {},
+      "station": "Crafting Table (3x3) plus wrench tool",
+      "crafting_pattern": [
+        "PPP",
+        "PwP",
+        "PPP"
+      ],
+      "pattern_key": {
+        "P": {
+          "item": "gtceu:steel_plate"
+        },
+        "w": {
+          "tool": "craftingToolWrench"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/MetaTileEntityLoader.java",
+        "line_start": 39,
+        "line_end": 42,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/MetaTileEntityLoader.java#L39-L42"
+      },
+      "additional_sources": [
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/VanillaRecipeHelper.java#L334-L355"
+      ],
+      "pack_context": {
+        "mod_version": "7.5.3",
+        "pack_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "pack_modlist_url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/crash_assistant/modlist.json",
+        "notes": "ATM9 Expert実ゲームでのレシピ有効性と配布バージョンとの同一性は未確認。削除設定/上位ティア用CraftingComponent変更も調査対象。"
+      }
+    },
+    {
+      "recipe_id": "gtceu:conveyor_module_lv_rubber",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_conveyor_module",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:rubber_plate"
+          },
+          "count": 6
+        },
+        {
+          "choice": {
+            "item": "gtceu:lv_electric_motor"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:tin_single_cable"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3x3)",
+      "crafting_pattern": [
+        "RRR",
+        "MCM",
+        "RRR"
+      ],
+      "pattern_key": {
+        "R": {
+          "item": "gtceu:rubber_plate"
+        },
+        "M": {
+          "item": "gtceu:lv_electric_motor"
+        },
+        "C": {
+          "item": "gtceu:tin_single_cable"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java",
+        "line_start": 156,
+        "line_end": 170,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L156-L170"
+      },
+      "pack_context": {
+        "mod_version": "7.5.3",
+        "pack_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "pack_modlist_url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/crash_assistant/modlist.json",
+        "notes": "ATM9 Expert実ゲームでのレシピ有効性と配布バージョンとの同一性は未確認。削除設定/上位ティア用CraftingComponent変更も調査対象。"
+      },
+      "alternative_variants": "Silicone Rubber and Styrene Butadiene Rubber also exist in source but are not yet indexed"
+    },
+    {
+      "recipe_id": "gtceu:lv_assembler",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_assembler",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:lv_robot_arm"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "tag": "gtceu:circuits/lv"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:lv_conveyor_module"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:lv_machine_hull"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "gtceu:tin_single_cable"
+          },
+          "count": 2
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3x3)",
+      "crafting_pattern": [
+        "ACA",
+        "VMV",
+        "WCW"
+      ],
+      "pattern_key": {
+        "A": {
+          "item": "gtceu:lv_robot_arm"
+        },
+        "C": {
+          "tag": "gtceu:circuits/lv"
+        },
+        "V": {
+          "item": "gtceu:lv_conveyor_module"
+        },
+        "M": {
+          "item": "gtceu:lv_machine_hull"
+        },
+        "W": {
+          "item": "gtceu:tin_single_cable"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/MetaTileEntityLoader.java",
+        "line_start": 781,
+        "line_end": 785,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/MetaTileEntityLoader.java#L781-L785"
+      },
+      "component_sources": [
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L80-L85",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L162-L166",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L282-L286",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L526-L529",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L543-L546"
+      ],
+      "pack_context": {
+        "mod_version": "7.5.3",
+        "pack_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "pack_modlist_url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/crash_assistant/modlist.json",
+        "notes": "ATM9 Expert実ゲームでのレシピ有効性と配布バージョンとの同一性は未確認。削除設定/上位ティア用CraftingComponent変更も調査対象。"
+      }
+    },
+    {
+      "recipe_id": "gtceu:lv_machine_hull",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_machine_hull",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:wrought_iron_plate"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:steel_plate"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "item": "gtceu:tin_single_cable"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:lv_machine_casing"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (2 rows)",
+      "crafting_pattern": [
+        "PLP",
+        "CHC"
+      ],
+      "pattern_key": {
+        "P": {
+          "item": "gtceu:wrought_iron_plate"
+        },
+        "L": {
+          "item": "gtceu:steel_plate"
+        },
+        "C": {
+          "item": "gtceu:tin_single_cable"
+        },
+        "H": {
+          "item": "gtceu:lv_machine_casing"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/MetaTileEntityLoader.java",
+        "line_start": 60,
+        "line_end": 62,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/MetaTileEntityLoader.java#L60-L62"
+      },
+      "component_sources": [
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L80-L85",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L162-L166",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L282-L286",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L526-L529",
+        "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java#L543-L546"
+      ],
+      "pack_context": {
+        "mod_version": "7.5.3",
+        "pack_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "pack_modlist_url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/crash_assistant/modlist.json",
+        "notes": "ATM9 Expert実ゲームでのレシピ有効性と配布バージョンとの同一性は未確認。削除設定/上位ティア用CraftingComponent変更も調査対象。"
+      }
+    },
+    {
+      "recipe_id": "gtceu:robot_arm_lv",
+      "recipe_type": "minecraft:crafting_shaped",
+      "output": {
+        "item": "gtceu:lv_robot_arm",
+        "count": 1
+      },
+      "inputs": [
+        {
+          "choice": {
+            "item": "gtceu:tin_single_cable"
+          },
+          "count": 3
+        },
+        {
+          "choice": {
+            "item": "gtceu:steel_rod"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:lv_electric_motor"
+          },
+          "count": 2
+        },
+        {
+          "choice": {
+            "item": "gtceu:lv_electric_piston"
+          },
+          "count": 1
+        },
+        {
+          "choice": {
+            "tag": "gtceu:circuits/lv"
+          },
+          "count": 1
+        }
+      ],
+      "catalysts": [],
+      "costs": {},
+      "station": "Crafting Table (3x3)",
+      "crafting_pattern": [
+        "CCC",
+        "MRM",
+        "PXR"
+      ],
+      "pattern_key": {
+        "C": {
+          "item": "gtceu:tin_single_cable"
+        },
+        "R": {
+          "item": "gtceu:steel_rod"
+        },
+        "M": {
+          "item": "gtceu:lv_electric_motor"
+        },
+        "P": {
+          "item": "gtceu:lv_electric_piston"
+        },
+        "X": {
+          "tag": "gtceu:circuits/lv"
+        }
+      },
+      "verification": {
+        "status": "source_parsed",
+        "effective_in_game": false,
+        "pack_version": null
+      },
+      "source": {
+        "repository": "GregTechCEu/GregTech-Modern",
+        "commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+        "path": "src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java",
+        "line_start": 666,
+        "line_end": 670,
+        "url": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java#L666-L670"
+      },
+      "pack_context": {
+        "mod_version": "7.5.3",
+        "pack_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+        "pack_modlist_url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/crash_assistant/modlist.json",
+        "notes": "ATM9 Expert実ゲームでのレシピ有効性と配布バージョンとの同一性は未確認。削除設定/上位ティア用CraftingComponent変更も調査対象。"
+      }
     }
   ]
 }

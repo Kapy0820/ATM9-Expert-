@@ -112,6 +112,41 @@
         "status": "source_parsed"
       }
     ],
+    "gtceu:lv_assembler": [
+      {
+        "recipe_id": "gtceu:lv_assembler",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
+    "gtceu:lv_conveyor_module": [
+      {
+        "recipe_id": "gtceu:conveyor_module_lv_rubber",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
+    "gtceu:lv_machine_casing": [
+      {
+        "recipe_id": "gtceu:casing_lv",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
+    "gtceu:lv_machine_hull": [
+      {
+        "recipe_id": "gtceu:lv_machine_hull",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
+    "gtceu:lv_robot_arm": [
+      {
+        "recipe_id": "gtceu:robot_arm_lv",
+        "file": "data/recipes/gtceu.json",
+        "status": "source_parsed"
+      }
+    ],
     "minecraft:dirt": [
       {
         "recipe_id": "botania:mana_infusion/dirt/dirt_dupe",
