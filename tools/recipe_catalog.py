@@ -29,9 +29,9 @@ def result_ids(recipe):
             continue
         for value in r if isinstance(r, list) else [r]:
             if isinstance(value, str) and ":" in value:
-                items.append(value)
+                items.append((value, 1))
             if isinstance(value, dict) and "item" in value:
-                items.append(str(value["item"]))
+                items.append((str(value["item"]), int(value.get("count", 1))))
     return sorted(set(items))
 
 def esc(value):
@@ -57,9 +57,9 @@ def main():
         ids = result_ids(data)
         if not ids:
             unclassified.append([str(path), "item output not identified"])
-        for item in ids:
+        for item, quantity in ids:
             mod = item.split(":")[0]
-            groups[mod].append((item, path.as_posix(), data))
+            groups[mod].append((item, quantity, path.as_posix(), data))
     args.output.mkdir(parents=True, exist_ok=True)
     summary = ["# Mod別アイテムレシピ一覧（自動抽出）", "",
                "このページはJSONの出力を機械抽出した未検証資料です。JEIの全レシピを保証しません。", "",
@@ -69,9 +69,9 @@ def main():
         name = re.sub(r"[^0-9A-Za-z_.-]", "_", mod) + ".md"
         summary.append("| " + mod + " | " + str(len(rows)) + " | [表示](" + name + ") |")
         lines = ["# " + mod + " — アイテムレシピ", "",
-                 "| 完成品 | レシピタイプ | 入力・素材 | 追加条件 | ファイル |",
-                 "|---|---|---|---|---|"]
-        for item, path, data in sorted(rows):
+                 "| 完成品 | 個数 | レシピタイプ | 入力・素材 | 追加条件 | ファイル |",
+                 "|---|---:|---|---|---|---|"]
+        for item, quantity, path, data in sorted(rows, key=lambda r: (r[0], r[2])):
             ins = "; ".join(k + ": " + flatten(data[k]) for k in
                             ("ingredients", "ingredient", "input", "inputs", "pattern",
                              "key", "catalyst", "reagent", "itemInputs", "fluidInputs")
@@ -79,7 +79,7 @@ def main():
             costs = "; ".join(k + ": " + flatten(data[k]) for k in
                               ("mana", "energy", "EUt", "eut", "duration", "time",
                                "processingTime", "temperature") if k in data)
-            lines.append("| " + " | ".join(map(esc, [item, data["type"], ins, costs, path])) + " |")
+            lines.append("| " + " | ".join(map(esc, [item, quantity, data["type"], ins, costs, path])) + " |")
         (args.output / name).write_text("\n".join(lines) + "\n", encoding="utf-8")
     (args.output / "README.md").write_text("\n".join(summary) + "\n", encoding="utf-8")
     (args.output / "unclassified.json").write_text(
