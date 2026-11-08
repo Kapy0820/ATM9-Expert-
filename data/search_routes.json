@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "purpose": "Fast source routing before full-text GitHub code search; routing hints are not in-game verification",
+  "version_guard": {
+    "pack_repository": "AllTheMods/atm9-expert",
+    "pack_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+    "modlist_source": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/crash_assistant/modlist.json",
+    "modid": "gtceu",
+    "mod_version": "7.5.3",
+    "source_repository": "GregTechCEu/GregTech-Modern",
+    "source_commit": "91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+    "warning": "Confirm the installed mod and pack version before using these source-derived recipes"
+  },
+  "routing": [
+    {
+      "id": "gtceu_tiered_machine",
+      "applies_when": "item ID starts with gtceu: and its name has a voltage prefix (e.g. lv_assembler)",
+      "target_example": "gtceu:lv_assembler",
+      "source_type": "generated_java",
+      "match_strategy": "identify generic machine type (assembler) from registry ID, locate GTMachines.ASSEMBLER rather than searching for generated lv_assembler literal",
+      "primary_source": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/MetaTileEntityLoader.java#L781-L785",
+      "primary_symbol": "GTMachines.ASSEMBLER",
+      "tiered_materials_source": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/GTCraftingComponents.java",
+      "registrations_source": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/common/data/GTMachines.java",
+      "pack_overrides": [
+        "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/recipeRemovals.js",
+        "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/startup_scripts/customComponents.js"
+      ],
+      "subparts_source": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java",
+      "output_registrar": "registerMachineRecipe creates a crafting recipe for each supported voltage tier",
+      "notes": "Do not mistake an assembler processing recipe (recipes.gtceu.assembler) for the crafting recipe of the Assembler machine"
+    },
+    {
+      "id": "gtceu_components",
+      "applies_when": "GTCEu electric motor, piston, conveyor module, robot arm, circuit; lower-tier crafting",
+      "target_example": "gtceu:lv_robot_arm",
+      "source_type": "java",
+      "primary_source": "https://github.com/GregTechCEu/GregTech-Modern/blob/91a79b8a7a2b62ec6277423e6c0ded4af89a831e/src/main/java/com/gregtechceu/gtceu/data/recipe/misc/ComponentRecipes.java",
+      "symbols": [
+        "robot_arm_lv",
+        "electric_piston_lv",
+        "electric_motor_lv_iron",
+        "electric_motor_lv_steel",
+        "conveyor_module_lv_"
+      ],
+      "note": "Many components have more than one valid recipe; present choices without inventing a preferred option"
+    },
+    {
+      "id": "pack_kubejs",
+      "applies_when": "pack-specific custom or modified recipe",
+      "source_type": "kubejs",
+      "primary_source": "https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts",
+      "removal_source": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/recipeRemovals.js",
+      "json_source": "https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data",
+      "search_strategy": "Exact output item ID first; use one broad fallback for ambiguous code paths; GitHub code search targets main and results must be re-checked at pinned commit."
+    }
+  ],
+  "stopping_rules": {
+    "first_answer": "As soon as direct recipe and immediate materials are source-grounded, supply a partial answer; do not wait for unrelated recursive branches to finish",
+    "default_dependency_depth": 1,
+    "deep_dependency_expansion": "only on request or when needed to resolve an immediate blocker; label unresolved otherwise",
+    "broad_code_searches_before_switching_path": 2,
+    "max_submission_batches": 1,
+    "avoid_duplicate_pr": true,
+    "ci_check": "one run after the grouped changes, unless failures justify fixes"
+  }
+}
