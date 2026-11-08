@@ -34,3 +34,15 @@
 配布されたATM9 Expertの**正確なバージョン**を固定し、実ゲームのJEI/EMIやエクスポートされた有効レシピと比較してください。Mod本体のjarにあるJSON、KubeJSのJSONとJavaScript、GregTech等の動的レシピ、削除・上書き後の結果は同一ではありません。
 
 **残る未収録領域:** GregTechの大半、各Modの標準レシピ、KubeJSのループによる生成、特別な流体や研究ゲート、戦利品・交易による入手。数千件に及ぶ可能性があるため、全アイテムの登録完了を宣言しないでください。
+
+## 公式JSONから一括取り込みする場合（プレビューのみ）
+
+公式Modpackを任意の固定コミットで取得した上で、次を実行します。
+
+```sh
+python tools/import_json.py /path/to/atm9-expert/kubejs/data --commit 309d0fa357b00d855f3a50739ae64737f7537936 --output import-preview
+python tools/recipe_query.py --data import-preview rebuild-index
+python tools/recipe_query.py --data import-preview lookup powah:dry_ice
+```
+
+`import-preview/skipped.json`に**未対応・条件未解決のJSON**が理由付きで残ります。これらを手順の根拠にしてはいけません。プレビューをそのまま既存の`data/recipes`に上書きせず、重複・変更・実ゲームでの有効性を確認してマージしてください。`import-preview/`は`.gitignore`対象です。

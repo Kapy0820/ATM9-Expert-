@@ -37,3 +37,7 @@ python tools/recipe_query.py plan powah:dry_ice --count 4 --choose powah:dry_ice
 [docs/IMPORT.md](docs/IMPORT.md) の仕様に従って`data/recipes/<出力Mod>.json`へ追加した後、`python tools/recipe_query.py rebuild-index`で索引を更新してください。変更のたびに`validate`で整合性を確認します。
 
 旧`catalog/`や`recipes/`のソースリンク集・Markdown生成物は、AIが未検証の情報を完成レシピと誤認しないよう整理しました。公式の一次資料は各レシピの `source.url` から参照できます。
+
+## レシピの取り込みを拡張する
+
+[保守的なJSONインポーター](tools/import_json.py)を利用できます。サポートする形式のみを取り込み、特殊なMod形式は`skipped.json`へ理由付きで残します。インポートしたレシピは自動的に`verified`になりません。コマンド例は[追加ガイド](docs/IMPORT.md)を参照してください。

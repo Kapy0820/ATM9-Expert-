@@ -146,6 +146,8 @@ def main():
     by_mod = collections.defaultdict(list)
     skipped = []
     for path in sorted(args.source.rglob("*.json")):
+        if "recipes" not in path.relative_to(args.source).parts:
+            continue
         try:
             recipe_id, rel = identity(path, args.source)
             data = json.loads(path.read_text(encoding="utf-8"))
