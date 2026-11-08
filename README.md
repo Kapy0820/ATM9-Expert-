@@ -30,6 +30,14 @@
 
 **これはATM9 Expert全アイテムの製作レシピ集ではありません。** 元データは公式GitHubの固定コミット `309d0fa357b00d855f3a50739ae64737f7537936`であり、配布版との完全一致やJEI上の有効性は未確認（`source_parsed`）です。レシピが見つからなくても「作れない」という意味ではありません。
 
+## AIが日本語で手順を返すための最短ルート
+
+```sh
+python tools/explain_recipe.py ars_nouveau:apprentice_spell_book
+```
+
+3×3の配置、依存素材、設備、根拠リンク、未確認事項を**出典付きのMarkdown**で表示します。これを他AIの回答の下書きとして利用し、未収録の材料は[SOURCES.md](SOURCES.md)の順番で追加調査してください。
+
 ## ローカルでの検索（Python 3、外部ライブラリ不要）
 
 ```sh

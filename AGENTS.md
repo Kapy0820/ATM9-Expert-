@@ -15,7 +15,7 @@ ATM9 Expertのユーザーがアイテムの作成手順を尋ねたとき、**�
 3. `data/item_index.json`の`items["namespace:path"]`を検索。**未収録なら下記の『公式ソースからの自己補完・GitHub提出』を必ず実行する。**
 4. 該当する`data/recipes/<完成品Mod ID>.json`から**該当する全候補**を取り出す。Modの分類は工程のModではなく**完成品のnamespace**。
 5. `output.count`・`inputs[].count`・`inputs[].choice`・`catalysts`・`costs`・`station`・`source.url`・`verification`を必ず確認。
-6. 前提アイテムのレシピを再帰的に引く。ローカル実行が可能なら`python tools/recipe_query.py plan <itemID> --count N`を使用。
+6. 前提アイテムのレシピを再帰的に引く。**最初に`python tools/explain_recipe.py <itemID> --count N`**で人間向けの出典付き手順を生成し、必要なら`python tools/recipe_query.py plan <itemID> --count N`で構造化データを検査する。
 7. **候補レシピが複数**ある場合は全部提示するか、ユーザーに選択を求める。勝手に最短・最安を決めない。
 8. **未収録の素材、タグ`#forge:...`、材料の選択肢、ループ、未確認の機械、装置構築、研究・次元制限**を推測して埋めない。「この段階以降は未確認」と明示。
 9. 完成品と同じアイテムを材料に戻す増殖レシピは、**初期種（手持ち1個など）**の必要性を明示する。必要な作業回数を安易に積算しない。
