@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "display_name": "ATM9 Expert レシピ調査の参照元レジストリ",
+  "modpack": "All the Mods 9: Expert",
+  "upstream_repository": "AllTheMods/atm9-expert",
+  "upstream_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
+  "pack_release_version": "NOT_VERIFIED",
+  "interpretation": "search_order is a discovery order, not a ranking of effective in-game evidence",
+  "record_statuses": {
+    "verified": "same modpack release, JEI/EMI or in-game validated",
+    "source_parsed": "source definition only; runtime validity and pack-version match not confirmed",
+    "unknown": "cannot claim a recipe is impossible"
+  },
+  "sources": [
+    {
+      "id": "local_manifest",
+      "order": 1,
+      "kind": "local",
+      "path": "data/manifest.json",
+      "url": "https://github.com/Kapy0820/ATM9-Expert-/blob/main/data/manifest.json",
+      "purpose": "validate target version, coverage and pinned upstream source",
+      "rule": "must read first"
+    },
+    {
+      "id": "local_index",
+      "order": 2,
+      "kind": "local",
+      "path": "data/item_index.json",
+      "url": "https://github.com/Kapy0820/ATM9-Expert-/blob/main/data/item_index.json",
+      "purpose": "exact output item ID to recipes file; missing means not indexed, not unobtainable",
+      "rule": "search exact namespace:item"
+    },
+    {
+      "id": "local_recipes",
+      "order": 3,
+      "kind": "local",
+      "path": "data/recipes/<OUTPUT_NAMESPACE>.json",
+      "url": "https://github.com/Kapy0820/ATM9-Expert-/tree/main/data/recipes",
+      "purpose": "structured recipe definitions with materials, quantity, source and validation status",
+      "rule": "read all candidates; output namespace not machine/mod namespace"
+    },
+    {
+      "id": "official_script_removals",
+      "order": 4,
+      "kind": "official_at_pinned_commit",
+      "path": "kubejs/server_scripts/recipeRemovals.js",
+      "url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/recipeRemovals.js",
+      "purpose": "check if default or existing recipes are removed or replaced",
+      "rule": "recipe ID and output item ID differ; removal doesn't imply no alternative"
+    },
+    {
+      "id": "official_scripts",
+      "order": 5,
+      "kind": "official_at_pinned_commit",
+      "path": "kubejs/server_scripts/**/*.js",
+      "url": "https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts",
+      "purpose": "find customized and dynamic recipes by exact output ID and recipe ID",
+      "examples": [
+        "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/Gregification/Mods/ars.js",
+        "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts/Gregification/miscItems.js"
+      ],
+      "rule": "open actual source; do not execute untrusted JavaScript or infer dynamic expansion"
+    },
+    {
+      "id": "official_recipe_json",
+      "order": 6,
+      "kind": "official_at_pinned_commit",
+      "path": "kubejs/data/<RECIPE_NAMESPACE>/recipes/**/*.json",
+      "url": "https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data",
+      "purpose": "find file-based crafting and processing recipes; recipe namespace may differ from output namespace",
+      "example": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data/powah/recipes/energizing/dry_ice/2x_dry_ice.json",
+      "rule": "do not infer validity until removals and overrides are examined"
+    },
+    {
+      "id": "pack_mod_jars",
+      "order": 7,
+      "kind": "local_installed_pack",
+      "path": "mods/*.jar ! data/<namespace>/recipes/**",
+      "url": null,
+      "purpose": "fallback for unchanged vanilla/Mod-provided recipes, using the exact jar versions from the installed pack",
+      "rule": "requires actual pack files or matching published mod version; unknown otherwise"
+    },
+    {
+      "id": "quests",
+      "order": 8,
+      "kind": "official_at_pinned_commit",
+      "path": "config/ftbquests/quests/chapters/*.snbt",
+      "url": "https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/config/ftbquests/quests/chapters",
+      "purpose": "progression hints and gates only, not authoritative recipe ingredients",
+      "example": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/ftbquests/quests/chapters/ars_nouveau.snbt",
+      "rule": "never turn quest task into crafting recipe"
+    },
+    {
+      "id": "runtime_jei",
+      "order": 9,
+      "kind": "same_version_runtime",
+      "path": "JEI/EMI and actual crafting test",
+      "url": null,
+      "purpose": "highest-confidence check for effective recipes and machine conditions",
+      "rule": "mark verified only when the pack release and evidence are recorded"
+    }
+  ],
+  "output_workflow": [
+    "check_version",
+    "lookup_exact_item",
+    "read_all_candidates",
+    "resolve_recipe_sources",
+    "recurse_ingredients",
+    "mark_unknown_dependencies",
+    "submit_source_grounded_change_to_GitHub_PR",
+    "answer_with_source_links_and_submission_status"
+  ]
+}

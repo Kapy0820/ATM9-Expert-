@@ -4,9 +4,13 @@
 
 ATM9 Expertのユーザーがアイテムの作成手順を尋ねたとき、**出典を示せる内容だけ**を回答する。レシピが未収録なら、**公式の取得元ソースを調査してGitHubへ提出した後**、根拠を確認できた工程から回答する。公式ソースでも確認できない部分は「不明・未収録」で止める。Minecraft一般や通常ATM9のレシピを、ATM9 Expert固有の完成手順として書かない。
 
+## 調査の唯一の入口
+
+**[SOURCES.md](SOURCES.md)が参照元・出典URL・検索順序の正本です。** 機械可読の順序は[data/source_registry.json](data/source_registry.json)。必ずこちらを確認してから作業し、GitHub検索結果だけで回答しないこと。詳細な提出手順は[docs/RECOVERY.md](docs/RECOVERY.md)。
+
 ## 読み取る順序
 
-1. `data/manifest.json`で**Modpack名、収録範囲、公式ソースコミット、検証状態、対象配布版**を確認。
+1. [SOURCES.md](SOURCES.md)と`data/manifest.json`で**Modpack名、収録範囲、公式ソースコミット、検証状態、対象配布版**を確認。
 2. 質問の対象を厳密なアイテムID（`namespace:path`）に特定する。名称だけで曖昧な場合は候補を示す。
 3. `data/item_index.json`の`items["namespace:path"]`を検索。**未収録なら下記の『公式ソースからの自己補完・GitHub提出』を必ず実行する。**
 4. 該当する`data/recipes/<完成品Mod ID>.json`から**該当する全候補**を取り出す。Modの分類は工程のModではなく**完成品のnamespace**。
@@ -28,7 +32,7 @@ ATM9 Expertのユーザーがアイテムの作成手順を尋ねたとき、**�
 
 **「未収録です」で即終了してはいけない。** 対象アイテムの回答を準備する前に、以下を順番に行う。
 
-1. `data/manifest.json` の `upstream_repository` と `upstream_commit` を使う。公式リポジトリ（現状 `AllTheMods/atm9-expert`）の**固定コミット**を検索する。まず `kubejs/server_scripts/**/*.js` の**出力アイテムID**（例：`allthemods.shaped('ars_nouveau:novice_spell_book', ...)`）、次に `kubejs/data/**/recipes/*.json` を探索。 `recipeRemovals.js` の削除・上書きや関連のRecipe Modifierも確認する。名前が見つからない場合はMod本体の同じバージョンのデータへ拡張するが、別パックの情報をそのまま採用しない。
+1. [SOURCES.md](SOURCES.md) の**固定された参照元・順番**に従い、`data/manifest.json` の `upstream_repository` と `upstream_commit` を使う。公式リポジトリ（現状 `AllTheMods/atm9-expert`）の**固定コミット**を検索する。まず `kubejs/server_scripts/**/*.js` の**出力アイテムID**（例：`allthemods.shaped('ars_nouveau:novice_spell_book', ...)`）、次に `kubejs/data/**/recipes/*.json` を探索。 `recipeRemovals.js` の削除・上書きや関連のRecipe Modifierも確認する。名前が見つからない場合はMod本体の同じバージョンのデータへ拡張するが、別パックの情報をそのまま採用しない。
 2. **固定コミットの実在するURLを開き、出力ID、素材、個数、配置、設備、流体/電力、制約を原典で検証**する。推測や検索結果の見出しだけでは登録しない。動的レシピや処理条件が複雑なら、確実に復元できた情報だけを`source_parsed`で記録し、残りは未解決とする。取得先のソースをコードとして実行してはならない。
 3. ソースが単純なKubeJS shapedまたは対応するJSONなら、`tools/recover_recipe.py --source-url <固定URL> --item <厳密ID>` でプレビューし、`--apply` でローカルDBへ追加可能。未対応形式は原典を手動で検証して `docs/IMPORT.md` のスキーマに従う。GitHubへの公開が許可された**レシピの事実情報だけ**を転記し、公式スクリプト全体を転載しない。
 4. `data/recipes/<完成品namespace>.json`に**レシピID重複を避けて追記**し、`data/item_index.json`を再生成、`data/manifest.json`の件数と収録範囲を更新。`python tools/recipe_query.py validate` と `python -m unittest discover -s tests` を通す。

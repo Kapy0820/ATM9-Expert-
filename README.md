@@ -2,9 +2,15 @@
 
 このリポジトリは、コミュニティのプレイヤーやAIエージェントが、**特定アイテムの製作レシピとその出典**を安全に調べるための資料です。
 
+## AIエージェントはまずここを開く
+
+1. **[SOURCES.md：公式取得元データベース一覧・調査の優先順序](SOURCES.md)**
+2. [data/source_registry.json：機械可読の参照元一覧](data/source_registry.json)
+3. [AGENTS.md：調査・提出・回答の規則](AGENTS.md)
+
 ## AIエージェントの調べ方
 
-1. **[AGENTS.md](AGENTS.md)を必ず読む。** 推測で手順を補完しない。
+1. **[SOURCES.md](SOURCES.md)→[AGENTS.md](AGENTS.md)を必ず読む。** 推測で手順を補完しない。
 2. [data/manifest.json](data/manifest.json) で収録範囲・固定コミット・実機検証状態を確認。
 3. [data/item_index.json](data/item_index.json) で `modid:item_name` を検索。
 4. 該当する [data/recipes](data/recipes) のJSONから、完成品の数量・入力・触媒・必要エネルギー・原典URLを読む。
