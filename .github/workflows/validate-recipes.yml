@@ -1,0 +1,17 @@
+name: Validate recipe database
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate index, source links and schema
+        run: python tools/recipe_query.py validate
+      - name: Run offline recipe tests
+        run: python -m unittest discover -s tests -v

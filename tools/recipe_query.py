@@ -108,6 +108,25 @@ def plan(db, item, requested, choices, inventory):
         else:
             chosen = options[0]
         runs = math.ceil(amount / chosen["output"]["count"])
+        self_inputs = [i for i in chosen["inputs"]
+                       if i.get("choice", {}).get("item") == target]
+        if self_inputs:
+            unresolved.append({
+                "item": target, "count": amount,
+                "reason": "self_referential_recipe_requires_initial_seed_and_sequential_crafts",
+                "minimum_seed_hint": "At least some of the output item is required before beginning; actual count depends on inventory.",
+                "recipe_id": chosen["recipe_id"]
+            })
+            steps.append({
+                "output_item": target, "requested_count": amount, "produced_count": None,
+                "recipe_id": chosen["recipe_id"], "crafts": None,
+                "station": chosen.get("station"), "consumed_inputs": chosen["inputs"],
+                "reusable_catalysts": chosen.get("catalysts", []),
+                "costs_per_craft": chosen.get("costs", {}),
+                "source": chosen["source"], "verification": chosen["verification"],
+                "warning": "Do not multiply the recipe in parallel: the output is itself required as input."
+            })
+            return
         for ing in chosen["inputs"]:
             options_ing = [ing["choice"]] if "choice" in ing else ing.get("choices", [])
             need = ing["count"] * runs
