@@ -1,0 +1,65 @@
+name: Recover missing recipe from official source
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: "Official GitHub blob URL with exact pinned commit"
+        required: true
+        type: string
+      item_id:
+        description: "Exact output item ID, e.g. ars_nouveau:novice_spell_book"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Extract official source recipe and update index
+        env:
+          SOURCE_URL: ${{ inputs.source_url }}
+          ITEM_ID: ${{ inputs.item_id }}
+        run: |
+          python tools/recover_recipe.py --source-url "$SOURCE_URL" --item "$ITEM_ID" --apply
+      - name: Validate source-grounded data and tests
+        run: |
+          python tools/recipe_query.py validate
+          python -m unittest discover -s tests -v
+      - name: Submit reviewable Pull Request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ITEM_ID: ${{ inputs.item_id }}
+          SOURCE_URL: ${{ inputs.source_url }}
+        run: |
+          set -euo pipefail
+          git add data/recipes data/item_index.json data/manifest.json
+          if git diff --cached --quiet; then
+            echo "No changes: this recipe is already recorded."
+            exit 0
+          fi
+          BRANCH="recipe-recovery/$GITHUB_RUN_ID"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$BRANCH"
+          git commit -m "data: recover $ITEM_ID from fixed official source"
+          git push --set-upstream origin "$BRANCH"
+          {
+            echo "Source: $SOURCE_URL"
+            echo
+            echo "Output item: $ITEM_ID"
+            echo
+            echo "Status: source_parsed (not verified in JEI/EMI)."
+            echo "Please review the ingredients, recipe removals, station and pack version before merging."
+          } > /tmp/recipe-pr-body.md
+          gh pr create --base main --head "$BRANCH" \
+            --title "Recipe recovery: $ITEM_ID" --body-file /tmp/recipe-pr-body.md
