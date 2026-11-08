@@ -1,6 +1,7 @@
 # ATM9 Expert レシピデータ
 
 - [Botania / マナ注入JSON（公式12件）](botania-mana-infusion.md)
+- [Powah / 公式JSONレシピ（12件）](powah-json.md)
 - [Botania / GregTechとの連携・実例](botania-starter.md)
 - [全Modのソース索引](../RECIPE_INDEX.md)
 - [実効レシピJSONのMod別変換手順](../CATALOG_GUIDE.md)
