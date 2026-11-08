@@ -5,7 +5,7 @@
   "upstream_repository": "AllTheMods/atm9-expert",
   "upstream_commit": "309d0fa357b00d855f3a50739ae64737f7537936",
   "pack_release_version": "NOT_VERIFIED",
-  "interpretation": "search_order is a discovery order, not a ranking of effective in-game evidence",
+  "interpretation": "search_order is a discovery order, not a ranking of effective in-game evidence; the pinned GregTech source is used only after pack-specific scripts and JSON",
   "record_statuses": {
     "verified": "same modpack release, JEI/EMI or in-game validated",
     "source_parsed": "source definition only; runtime validity and pack-version match not confirmed",
@@ -81,8 +81,19 @@
       "rule": "requires actual pack files or matching published mod version; unknown otherwise"
     },
     {
-      "id": "quests",
+      "id": "matching_gtceu_mod_source",
       "order": 8,
+      "kind": "version_locked_mod_source",
+      "path": "GTCEu Modern v7.5.3-1.20.1 Java-generated machine recipes",
+      "url": "https://github.com/GregTechCEu/GregTech-Modern/tree/91a79b8a7a2b62ec6277423e6c0ded4af89a831e",
+      "matched_pack_modlist_url": "https://github.com/AllTheMods/atm9-expert/blob/309d0fa357b00d855f3a50739ae64737f7537936/config/crash_assistant/modlist.json",
+      "version": "7.5.3",
+      "purpose": "fallback for default GregTech machine recipes generated in Java rather than shipped as recipe JSON",
+      "rule": "use matching mod version only, inspect original source and source component mappings; validate in JEI/EMI"
+    },
+    {
+      "id": "quests",
+      "order": 9,
       "kind": "official_at_pinned_commit",
       "path": "config/ftbquests/quests/chapters/*.snbt",
       "url": "https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/config/ftbquests/quests/chapters",
@@ -92,7 +103,7 @@
     },
     {
       "id": "runtime_jei",
-      "order": 9,
+      "order": 10,
       "kind": "same_version_runtime",
       "path": "JEI/EMI and actual crafting test",
       "url": null,

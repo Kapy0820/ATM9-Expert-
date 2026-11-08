@@ -17,8 +17,9 @@
 | 5 | 公式KubeJSのJavaScript | [server_scripts](https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts) | 新規・改変・動的なクラフト/機械レシピ |
 | 6 | 公式KubeJSのレシピJSON | [kubejs/data](https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data) | JSONによるレシピ定義 |
 | 7 | 対象Modのjar内部 | 使用中パックの`mods/*.jar` | KubeJSにない標準Modレシピ（**同じModバージョンを必須とする**） |
-| 8 | クエスト・進行情報 | [FTB Quests](https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/config/ftbquests/quests/chapters) | 技術段階・前提クエストのヒント（レシピの証拠ではない） |
-| 9 | 実ゲーム | 同じ配布版のJEI/EMI・製造成功 | レシピが実際に有効か、最終確認 |
+| 8 | 同じバージョンのMod公式ソース（GTCEu 7.5.3） | [公式GTCEu 7.5.3ソース](https://github.com/GregTechCEu/GregTech-Modern/tree/91a79b8a7a2b62ec6277423e6c0ded4af89a831e) | Javaで生成されるGregTech標準機械レシピとLV素材マッピング。対象Modの同一バージョンに限る |
+| 9 | クエスト・進行情報 | [FTB Quests](https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/config/ftbquests/quests/chapters) | 技術段階・前提クエストのヒント（レシピの証拠ではない） |
+| 10 | 実ゲーム | 同じ配布版のJEI/EMI・製造成功 | レシピが実際に有効か、最終確認 |
 
 **実行順序**と**証拠の信頼性**を混同しないでください。最も信頼できるのは対象の配布版で検証した`verified`情報です。ソースに書かれていてもゲーム内で有効とは限りません。
 
@@ -30,8 +31,9 @@
 4. [server_scripts](https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/server_scripts)のJSを完成品IDで検索。GregTech連携では`Gregification/Mods/`や`Gregification/`を優先して開く。ただしMod固有のコードが別のディレクトリにあることもある。
 5. [kubejs/data](https://github.com/AllTheMods/atm9-expert/tree/309d0fa357b00d855f3a50739ae64737f7537936/kubejs/data)内の`<レシピ定義namespace>/recipes/**/*.json`を調べる。**出力アイテムのnamespaceとレシピnamespaceは一致しない場合がある**。
 6. それでも見つからなければ**使用中パックのMod jar標準データ**を調べる。対象バージョンが確認できない場合は一致と断言しない。
-7. ゲーム内JEI/EMIとクエストを照合。参照したスクリプトに削除・上書き・条件分岐があれば不確定要素として記録。
-8. 出典の固定コミットURLからレシピを回収し、[RECOVERY.md](docs/RECOVERY.md)に従ってGitHub PR提出。提出状況を報告してから、**確認できた部分のみ**の材料→工程→不足部分を説明する。
+7. jarの中のJSONがない動的生成標準レシピについては、対象Modの同一タグ（例：[GTCEu 7.5.3](https://github.com/GregTechCEu/GregTech-Modern/tree/91a79b8a7a2b62ec6277423e6c0ded4af89a831e)）のJavaソースも調べる。
+8. ゲーム内JEI/EMIとクエストを照合。参照したスクリプトに削除・上書き・条件分岐があれば不確定要素として記録。
+9. 出典の固定コミットURLからレシピを回収し、[RECOVERY.md](docs/RECOVERY.md)に従ってGitHub PR提出。提出状況を報告してから、**確認できた部分のみ**の材料→工程→不足部分を説明する。
 
 ## 最初に開く公式の具体例
 
