@@ -18,11 +18,11 @@
 2. [data/manifest.json](data/manifest.json) で収録範囲・固定コミット・実機検証状態を確認。
 3. [data/item_index.json](data/item_index.json) で `modid:item_name` を検索。
 4. 該当する [data/recipes](data/recipes) のJSONから、完成品の数量・入力・触媒・必要エネルギー・原典URLを読む。
-5. 必要な前提素材を `tools/recipe_query.py` でたどる。**未収録なら公式ソースから検索・回収し、GitHubへ提出してから回答する。** 未確認の工程は部分手順とする。
+5. 必要な前提素材を `tools/recipe_query.py` でたどる。**未収録なら公式ソースを検索し、確認できた製法を部分回答する。GitHubへの提出結果は最終報告する。** 未確認の工程は部分手順とする。
 
 ## 未収録アイテムを自動で補完する
 
-- [未収録時のAIエージェント手順](docs/RECOVERY.md)：公式コミットを検索→定義を取得→解析→GitHub PRへ提出→出典付きで回答。
+- [未収録時のAIエージェント手順](docs/RECOVERY.md)：公式コミットを検索→定義を取得→根拠付きで部分回答→GitHub PRへまとめて提出→最終結果を報告。
 - [ソースURLからレシピを回収](tools/recover_recipe.py)：固定GitHub URLを指定してプレビューまたはDBに追加。JSの単純なshapedレシピと一部JSONのみ対応。
 - [GitHub Actionsでレシピ追加PRを作成](.github/workflows/recover-recipe.yml)：Actionsの **Run workflow** に原典URL・完成品IDを入力。GitHub設定によりPR作成許可が必要。
 
